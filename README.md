@@ -108,8 +108,7 @@ PSI v.s. CI	| True| (-1.3 , 2.5)	| 0.44	| 150	| 0.45	| 1.1
 Beside SVM and KNN classifiers we also used GLM classifier for comparison of 14 feature selection approaches. Figure Figure6} shows the boxplots of SVM,KNN, and GLM classifiers average performance over using 1 to 50 top features reported by all 14 methods on all 22 data sets in 10-fold cross-validation approach.  
 
 ![figs6](https://cloud.githubusercontent.com/assets/12883478/21486277/0eabf7fa-cb77-11e6-9da5-85ac78882099.png)
-### Figure 6: 
-Boxplot of SVM,KNN, and GLM classifiers performance using 1 to 50 top features reported by all 14 methods.
+__Figure 6:__ Boxplot of SVM,KNN, and GLM classifiers performance using 1 to 50 top features reported by all 14 methods.
 
 
 

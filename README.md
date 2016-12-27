@@ -10,9 +10,7 @@ Please see http://compgenomics.utsa.edu/zgroup/PSI/download.html to download the
 [1]. Bari, M. G., Salekin, S. and Zhang, J. (2016), 
 A Robust and Efficient Feature Selection Algorithm for Microarray Data. Mol. Inf.. doi:10.1002/minf.201600099
 
-[2]. Salekin, Sirajul, Mehrab Ghanat Bari, Itay Raphael, Thomas G. Forsthuber, and Jianqiu Michelle Zhang. 
-"Early disease correlated protein detection using early response index (ERI)." 
-In 2016 IEEE-EMBS International Conference on Biomedical and Health Informatics (BHI), pp. 569-572. IEEE, 2016.
+[2]. Salekin, S., Bari, M. G., Raphael, I., Forsthuber, T. G., & Zhang, J. M. (2016, February). Early disease correlated protein detection using early response index (ERI). In 2016 IEEE-EMBS International Conference on Biomedical and Health Informatics (BHI) (pp. 569-572). IEEE.
 
 [3]. ....
 

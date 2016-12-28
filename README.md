@@ -23,7 +23,7 @@ A Robust and Efficient Feature Selection Algorithm for Microarray Data. Mol. Inf
                                                      ****
 						     
 						     
-## 1 Introduction
+## Introduction
 We developed a new feature selection method, PSI, which based on the synergistic effects caused
 when the features combined to each other and are used as input of a classifier. The idea is that, irrelevant
 features, while combining other features are more likely to contribute negatively to classifier performance
@@ -36,7 +36,7 @@ train a model to classify the unseen test set.
 In the PSI algorithm, to compute the synergy scores of features, the individual and paired accuracy of preselected N features are needed, and it uses SVM classifier to do so. Here, we want to show the benefit of using SVM for the computation of accuracy of a feature or feature pairs, *Acc(F_i)* and *Acc(F_i, F_j)*, respectively.
 
 ![figs1](https://cloud.githubusercontent.com/assets/12883478/21486274/0ea5477a-cb77-11e6-90d4-c72e0aea755d.png)
-__Figure 1:&__ Comparing PSI accuracy performance and time complicity using SVM and LR, a) Average accuracy over 22 datasets b) Boxplot of the average of averages running time
+__Figure 1:__ Comparing PSI accuracy performance and time complicity using SVM and LR, a) Average accuracy over 22 datasets b) Boxplot of the average of averages running time
 
 As SVM scales with number of samples and Logistic Regression (LR) with number of features, this should be preferable for large datasets. It is a good practice to use LR instead of SVM in PSI body to see whether on not LR would be more efficient. The Figure 1 shows the average accuracy and run time of PSI when using LR and SVM over all the datasets. In both cases the N=300, *alpha* = 0.29 and 10-fold cross validation scheme was used. When N=300, PSI is about 5 times faster than, when it uses LR instead of SVM. However, it causes very poor accuracy results as shown in the Figure Figure 1_a. Note that, we proposed N to be equal to 100 in the final PSI while using SVM, which is at lease 7 times faster than when N=300 and still has the same good average accuracies. The effect of N on PSI performance is represented in the next section.
 Above results, convincing us to use SVM in PSI structure, and since we are using the original SVM function in MATLAB without any parameter setting, subsequently PSI uses SVM with the benefit of not having to select a cost parameters. 
@@ -55,7 +55,7 @@ Also for the datasets "Colon" and "CNS", which have 2000 and 7129 genes, we used
 ## The effect of  *alpha* on average performance
 
 The ‘mixing’ parameter*alpha*, is a parameter of PSI along with N the number of features considered (Set to 100). It is selected to be 0.29 based on the average of the *alpha* cause best accuracy for each dataset in training step. 
-Figure 3 shows the effect of changing *alpha* on PSI's average accuracy on datasets "CNS'', "GCM'', "GSE27854'' and "Prostate4'', when PSI applies on unseen test sets. PSI average accuracy in most of 22 cases show a peak when \alpha is around 0.16 like the cases "GCM'' and "Prostate4''. Because \alpha=0.16 was seen in the outmost loop of the double CV scheme, then PSI may have an unfair advantage over the other methods, then we report the results by using *alpha* = 0.29.
+Figure 3 shows the effect of changing *alpha* on PSI's average accuracy on datasets "CNS'', "GCM'', "GSE27854'' and "Prostate4'', when PSI applies on unseen test sets. PSI average accuracy in most of 22 cases show a peak when *alpha* is around 0.16 like the cases "GCM'' and "Prostate4''. Because *alpha*=0.16 was seen in the outmost loop of the double CV scheme, then PSI may have an unfair advantage over the other methods, then we report the results by using *alpha* = 0.29.
 
 ![figs3](https://cloud.githubusercontent.com/assets/12883478/21486273/0ea53190-cb77-11e6-86f1-9672abd28c08.png)
 __Figure 3:__ The effect of  *alpha* on average accuracy of PSI using 1 up to 50 top features in dataset, a) CNS, b) GCM, c) GSE27854, d) Prostate3
@@ -98,7 +98,7 @@ PSI v.s. CI	| True| (-1.3 , 2.5)	| 0.44	| 150	| 0.45	| 1.1
 
 ## SVM, KNN and GLM classifiers comparison
 
-Beside SVM and KNN classifiers we also used GLM classifier for comparison of 14 feature selection approaches. Figure Figure6} shows the boxplots of SVM,KNN, and GLM classifiers average performance over using 1 to 50 top features reported by all 14 methods on all 22 data sets in 10-fold cross-validation approach.  
+Beside SVM and KNN classifiers we also used GLM classifier for comparison of 14 feature selection approaches. Figure 6 shows the boxplots of SVM,KNN, and GLM classifiers average performance over using 1 to 50 top features reported by all 14 methods on all 22 data sets in 10-fold cross-validation approach.  
 
 ![figs6](https://cloud.githubusercontent.com/assets/12883478/21486277/0eabf7fa-cb77-11e6-9da5-85ac78882099.png)
 __Figure 6:__ Boxplot of SVM,KNN, and GLM classifiers performance using 1 to 50 top features reported by all 14 methods.

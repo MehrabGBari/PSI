@@ -1,24 +1,24 @@
-function Features  = ttest_fold (InData)
+function Features  = ttest_fold (dat)
 % Summary; this function will select significant features based on P_values scores.
 % Given a G*S data matrix, N genes where N<<G will be selected. 
 %
 % By Mehrab Ghanat Bari (m.ghanatbari@gmail.com)
 % September 2014.
-Features = cell(1,InData.fold);
-for i = 1:InData.fold
-    CLASS1 = InData.Folds_c1.train{i};
-    CLASS2 = InData.Folds_c2.train{i};
+Features = cell(1,dat.fold_out);
+for i = 1:dat.fold_out
+    CLASS1 = dat.Folds_c1.train{i};
+    CLASS2 = dat.Folds_c2.train{i};
     [pvalues,~] = mattest(CLASS1, CLASS2);
     [Sortedpvalues , Generank]=sort(pvalues);
     Sortedpvalues =-log(Sortedpvalues);
     IDP05p = sum(Sortedpvalues >= -log(0.05));
     CLASS1 = CLASS1(Generank(1:IDP05p),:);
     CLASS2 = CLASS2(Generank(1:IDP05p),:);
-    genelist = zeros(IDP05p,InData.NumTrainReapet);
-    for j =1:InData.NumTrainReapet
+    genelist = zeros(IDP05p,dat.NumTrainReapet);
+    for j =1:dat.NumTrainReapet
         
-        Index1 = randperm(size(CLASS1,2),floor(InData.ttestPer*size(CLASS1,2)));
-        Index2 = randperm(size(CLASS2,2),floor(InData.ttestPer*size(CLASS2,2)));
+        Index1 = randperm(size(CLASS1,2),floor(dat.ttestPer*size(CLASS1,2)));
+        Index2 = randperm(size(CLASS2,2),floor(dat.ttestPer*size(CLASS2,2)));
         
         % T test
         [pvalues,~] = mattest(CLASS1(:,Index1), CLASS2(:,Index2));
@@ -31,9 +31,6 @@ for i = 1:InData.fold
     end
     Features{i} = genelist;
 end
-
-
-
 end
 
 

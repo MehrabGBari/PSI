@@ -4,8 +4,8 @@
 %
 % By Mehrab Ghanat Bari (m.ghanatbari@gmail.com)
 % September 2014.
-Data.Comb2Acc = cell(1,Data.fold);
-for crossValid = 1:Data.fold
+Data.Comb2Acc = cell(1,Data.fold_out);
+for crossValid = 1:Data.fold_out
     filename = ['Comb2_fold_',num2str(crossValid),'.mat'];
     load (filename)
     Data.Comb2Acc{crossValid} = Comb2;

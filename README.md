@@ -80,8 +80,8 @@ Figure 5 shows the box plot of accuracy results provided by 14 methods using top
 
 **Table 1:** Wilcoxon signed rank test with continuity correction
 
- *H_1* |  95% confidence interval | (pseudo)median | Test statistic |  p-value	 | -log2(p-value)  
---- | --- | --- | --- | --- | --- 
+Case | *H_1* |  95% confidence interval | (pseudo)median | Test statistic |  p-value	 | -log2(p-value)  
+--- | --- | --- | --- | --- | --- | --- 
 PSI v.s. IA	| True	| (1.4 , 9.1) |	4.73	| 198 |	0.0043 |	7.8 
 PSI v.s. k-TSP	| True| (-0.5 , 2.6) |	1.39 |	157 |	0.15 |	2.6  
 PSI v.s. SVM-R	| True| (0.1 , 5.6) |	2.64 |	176	| 0.037 |	4.7  
